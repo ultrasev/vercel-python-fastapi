@@ -15,13 +15,25 @@
 </p>
 
 
-
-# 一键部署
+# Deploy with Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ultrasev/vercel-python-fastapi/tree/master/vercel&demo-title=PythonDeployment&demo-description=Deploy&demo-url=https://llmproxy.vercel.app/&demo-image=https://vercel.com/button)
 
+# Local Development
+
+```bash
+pip3 install -r requirements.txt
+pip3 install uvicorn
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+# Documentation
+- [FastAPI framework](https://fastapi.tiangolo.com/)
+- [Vercel: configure a build](https://dlj.one/ktkfme)
+- [Stackoverflow: How can you specify python runtime version in vercel?](https://dlj.one/itw3m0)
+- [Vercel Python hello world example](https://vercel.com/templates/python/python-hello-world)
+
 
 # License
-
 Copyright © 2024 [ultrasev](https://github.com/ultrasev).<br />
 This project is [MIT](LICENSE) licensed.
