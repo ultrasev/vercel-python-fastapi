@@ -42,7 +42,7 @@ USAGE = """<!DOCTYPE html>
     <div class="container">
         <p> success </p>
         <h1>Usage</h1>
-        <p>Visit <a href="https://dlj.one/b2a7mn" target="_blank">Github doc</a> for more information.</p>
+        <p>Visit <a href="https://github.com/ultrasev/vercel-python-fastapi" target="_blank">Github doc</a> for more information.</p>
     </div>
 </body>
 </html>
