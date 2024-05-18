@@ -5,7 +5,7 @@ import pydantic
 from fastapi import Header
 from fastapi.routing import APIRouter
 from openai import AsyncClient
-
+import requests
 router = APIRouter()
 
 
