@@ -13,7 +13,7 @@ class ChatArgs(pydantic.BaseModel):
     messages: typing.List[typing.Dict[str, str]]
 
 
-@router.post("/chat/completions")
+@router.post("/lovegroq")
 async def groq_api(args: ChatArgs, authorization: str = Header(...)):
     api_key = authorization.split(" ")[1]
     client = AsyncClient(base_url="https://api.groq.com/openai/v1",
