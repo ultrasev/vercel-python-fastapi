@@ -5,12 +5,6 @@
       "use": "@vercel/python"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "main.py"
-    }
-  ],
   "rewrites": [
     { "source": "/proxy/:match/:url*", "destination": "https://:match/:url*" },
     {
