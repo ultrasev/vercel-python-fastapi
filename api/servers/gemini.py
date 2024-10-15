@@ -4,13 +4,12 @@
 Gemini API docs:
 - https://ai.google.dev/gemini-api/docs/text-generation?lang=rest
 '''
-
+from loguru import logger
 from pydantic import BaseModel
 from fastapi import APIRouter, HTTPException, Header, Query
 from fastapi.responses import JSONResponse, StreamingResponse
 import httpx
 import typing
-import codefast as cf
 from typing import List, Dict, Optional
 from .base import Message
 import time
@@ -73,6 +72,7 @@ def convert_gemini_to_openai_response(gemini_response: dict, model: str) -> dict
         }]
     }
 
+
 async def stream_gemini_response(model: str, payload: dict, api_key: str):
     text_pattern = re.compile(r'"text": "(.*?)"')
 
@@ -126,8 +126,6 @@ async def stream_gemini_response(model: str, payload: dict, api_key: str):
     yield "data: [DONE]\n\n"
 
 
-
-
 @router.post("/chat/completions")
 async def proxy_chat_completions(
     args: OpenAIProxyArgs,
@@ -168,7 +166,7 @@ async def proxy_chat_completions(
                     "x-goog-api-key": api_key
                 }
             )
-            cf.info(response.status_code)
+            logger.info(response.status_code)
 
             if response.status_code != 200:
                 return JSONResponse(content=response.json(), status_code=response.status_code)
