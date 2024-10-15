@@ -14,14 +14,19 @@
 <a href="https://github.com/ultrasev/vercel-python-fastapi/issues/new/choose">Request Feature</a>
 </p>
 
-# 项目介绍
+搭建在 Vercel 上 LLM API 反向代理。
 
 ## 支持功能
 
-- 供应商：Groq、Google、OpenAI
-- 流式输出
+- 支持供应商：Groq、Google、OpenAI
+- 支持流式输出
+- 兼容 OpenAI API 规范
 
 # 示例
+```python
+from openai import AsyncOpenAI
+
+```
 
 # Vercel 一键部署
 
