@@ -24,7 +24,7 @@ logger.info(f"BASE_URL: {BASE_URL}")
 
 async def make_request(supplier: str, api_key: str, model: str):
     BASE_URL = api_endpoint() + f"/{supplier}"
-    query = "Count from 1 to 5" + random.randint(1, 1000) * " "
+    query = "Count from 1 to 5"
 
     client = AsyncOpenAI(base_url=BASE_URL, api_key=api_key)
 
@@ -71,4 +71,13 @@ async def test_groq_streaming():
         supplier="groq",
         api_key=os.environ["GROQ_API_KEY"],
         model="mixtral-8x7b-32768"
+    )
+
+
+@pytest.mark.asyncio
+async def test_gemini_streaming():
+    await make_request(
+        supplier="gemini",
+        api_key=os.environ["GEMINI_API_KEY"],
+        model="gemini-1.5-flash"
     )
