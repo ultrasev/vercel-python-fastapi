@@ -1,6 +1,6 @@
 <p align="center">
  <img width="100px" src="public/vercel.png" align="center" alt="Deploy Python(+FastAPI) project on Vercel" />
- <h2 align="center">Deploy Python(+FastAPI) project on Vercel</h2>
+ <h2 align="center"> LLM API 反向代理 </h2>
 
 <p align="center">
   <a href="https://github.com/ultrasev/vercel-python-fastapi/issues">
@@ -14,8 +14,16 @@
 <a href="https://github.com/ultrasev/vercel-python-fastapi/issues/new/choose">Request Feature</a>
 </p>
 
+# 项目介绍
 
-# Deploy with Vercel
+## 支持功能
+
+- 供应商：Groq、Google、OpenAI
+- 流式输出
+
+# 示例
+
+# Vercel 一键部署
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ultrasev/vercel-python-fastapi/tree/master/vercel&demo-title=PythonDeployment&demo-description=Deploy&demo-url=https://llmproxy.vercel.app/&demo-image=https://vercel.com/button)
 
@@ -27,13 +35,7 @@ pip3 install uvicorn
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-# Documentation
-- [FastAPI framework](https://fastapi.tiangolo.com/)
-- [Vercel: configure a build](https://dlj.one/ktkfme)
-- [Stackoverflow: How can you specify python runtime version in vercel?](https://dlj.one/itw3m0)
-- [Vercel Python hello world example](https://vercel.com/templates/python/python-hello-world)
-
-
 # License
+
 Copyright © 2024 [ultrasev](https://github.com/ultrasev).<br />
 This project is [MIT](LICENSE) licensed.
