@@ -63,3 +63,12 @@ async def test_openai_streaming():
         api_key=os.environ["OPENAI_API_KEY"],
         model="gpt-3.5-turbo"
     )
+
+
+@pytest.mark.asyncio
+async def test_groq_streaming():
+    await make_request(
+        supplier="groq",
+        api_key=os.environ["GROQ_API_KEY"],
+        model="mixtral-8x7b-32768"
+    )
