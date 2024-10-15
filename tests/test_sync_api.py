@@ -27,7 +27,6 @@ async def make_request(api_key: str,
                        supplier: str,
                        query: str = "what is the result of 2*21"):
     client = AsyncOpenAI(base_url=BASE_URL + f"/{supplier}", api_key=api_key)
-    query += random.randint(1, 1000) * ' '  # avoid cached result
     response = await client.chat.completions.create(
         model=model,
         messages=[
@@ -58,4 +57,12 @@ async def test_openai():
         api_key=os.environ["OPENAI_API_KEY"],
         model="gpt-4o-mini"
     )
-#
+
+
+@pytest.mark.asyncio
+async def test_gemini():
+    await make_request(
+        supplier="gemini",
+        api_key=os.environ["GEMINI_API_KEY"],
+        model="gemini-1.5-flash"
+    )
